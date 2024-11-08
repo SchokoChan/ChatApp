@@ -8,5 +8,12 @@ namespace ChatApp
 {
     internal interface IModelLogin
     {
+
+        void createNewUser(User user);
+        void getUser(User user);
+
+
+        IViewLogin ViewLogin { set; }
+        IControllerLogin ControllerLogin { set; }
     }
 }

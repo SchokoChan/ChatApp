@@ -11,14 +11,59 @@ using System.Windows.Shapes;
 
 namespace ChatApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window , IViewLogin
     {
+        private IModelLogin model = new ModelLogin();
+        private IControllerLogin controller = new ControllerLogin();
+
         public MainWindow()
         {
             InitializeComponent();
+            InitializeMVC();
+        }
+
+        private void InitializeMVC()
+        {
+            model.ViewLogin = this;
+            model.ControllerLogin = controller;
+
+            controller.ModelLogin = model;
+            controller.ViewLogin = this;
+        }
+
+        void IViewLogin.LoginCanceled(string errorMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.LoginFailed(string errorMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.LoginSuccessful(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.Logout()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.RegisterCanceled(string errorMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.RegisterFailed(string errorMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IViewLogin.RegisterSuccessful(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }
