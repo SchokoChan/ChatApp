@@ -14,7 +14,8 @@ namespace ChatApp
 
         void IControllerLogin.Login(string username, string password)
         {
-            throw new NotImplementedException();
+            string hash = model.getHash(username);
+            
         }
 
         void IControllerLogin.Login(int phonenumber, string password)
@@ -42,6 +43,15 @@ namespace ChatApp
             throw new NotImplementedException();
         }
 
+        private string hashPasswort()
+        {
+            throw new NotImplementedException ();
+        }
+
+        private string generateSalt()
+        {
+            throw new NotImplementedException ();
+        }
 
         IViewLogin IControllerLogin.ViewLogin { set => view = value; }
         IModelLogin IControllerLogin.ModelLogin { set => model = value; }

@@ -11,7 +11,7 @@ namespace ChatApp
 
         void createNewUser(User user);
         void getUser(User user);
-
+        string getHash(String username);
 
         IViewLogin ViewLogin { set; }
         IControllerLogin ControllerLogin { set; }
