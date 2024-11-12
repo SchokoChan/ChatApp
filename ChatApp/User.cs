@@ -7,7 +7,7 @@ using System.Net.Mail;
 
 namespace ChatApp
 {
-    internal class User
+    public class User
     {
         private int id;
         private string username;
@@ -28,13 +28,17 @@ namespace ChatApp
         }
         public User(int id, MailAddress emailadress)
         {
-            this.id=id;
+            this.id = id;
             this.emailadress = emailadress;
         }
         public User(int id, int phonenumber)
         {
             this.id = id;
             this.phonenumber = phonenumber;
+        }
+        public User()
+        {
+
         }
 
         public int Id { get => id; }
